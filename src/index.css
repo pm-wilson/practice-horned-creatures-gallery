@@ -15,4 +15,9 @@ code {
 img {
   width: 500px;
   height: auto;
+  box-shadow: 5px 5px;
+}
+
+section {
+  border: 2px solid red;
 }
