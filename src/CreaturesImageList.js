@@ -1,21 +1,26 @@
 import React from 'react';
+import ImageItem from './ImageItem.js';
 
 class CreaturesImageList extends React.Component {
     render() {
         const creatureData = this.props.data;
+        const keywordFilterData = creatureData.filter((item) => {
+            return this.props.filterData.keywordFilter === 'All' ? true : item.keyword === this.props.filterData.keywordFilter
+        });
+        const hornFilterData = keywordFilterData.filter((item) => {
+            return this.props.filterData.hornFilter === 'All' ? true : item.horns === Number(this.props.filterData.hornFilter)
+        });
 
         return (
             <main>
-                {creatureData.map((creature) => {
-                    return (
-                        <section key={creature.keyword}>
-                            <h3>{creature.title} with {creature.horns} {creature.horns === 1 ? 'horn' : 'horns'}</h3>
-                            <img alt={creature.title} src={creature.url} />
-                            <p>{creature.description}</p>
-                        </section>
-                    )
-                })}
-            </main>
+                {
+                    hornFilterData.map((creature, i) => {
+                        return (
+                            <ImageItem creature={creature} key={i} />
+                        )
+                    })
+                }
+            </main >
         )
     }
 }
