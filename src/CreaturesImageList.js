@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageItem from './ImageItem.js';
 
 class CreaturesImageList extends React.Component {
     render() {
@@ -6,13 +7,9 @@ class CreaturesImageList extends React.Component {
 
         return (
             <main>
-                {creatureData.map((creature) => {
+                {creatureData.map((creature, i) => {
                     return (
-                        <section key={creature.keyword}>
-                            <h3>{creature.title} with {creature.horns} {creature.horns === 1 ? 'horn' : 'horns'}</h3>
-                            <img alt={creature.title} src={creature.url} />
-                            <p>{creature.description}</p>
-                        </section>
+                        <ImageItem creature={creature} key={i} />
                     )
                 })}
             </main>
