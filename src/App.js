@@ -7,9 +7,8 @@ import CreaturesFooter from './CreaturesFooter.js';
 
 class App extends React.Component {
   state = {
-    hornFilter: '',
-    keywordFilter: '',
-    foo: ''
+    hornFilter: 'All',
+    keywordFilter: 'All',
   }
 
   horns = ['All', 1, 2, 3, 100];
@@ -32,15 +31,10 @@ class App extends React.Component {
     this.setState(obj)
   }
 
-  componentDidMount() {
-    this.updateState({ foo: "bar" })
-  }
-
   render() {
-    console.log(this.state)
     return (
       <div>
-        <CreaturesHeader horns={this.horns} keywords={this.keywords} state={this.state} onDropdownSelect={this.updateState} />
+        <CreaturesHeader horns={this.horns} keywords={this.keywords} onDropdownSelect={this.updateState} />
         <CreaturesImageList data={data} filterData={this.state} />
         <CreaturesFooter />
       </div>

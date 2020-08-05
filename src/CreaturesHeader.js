@@ -4,18 +4,15 @@ import SelectItem from './SelectItem.js';
 class CreaturesHeader extends React.Component {
     handleKeywordFilter = (e) => {
         const keywordFilter = e.target.value;
-        this.state.setState({ keyword: { keywordFilter } })
-        console.log(this.state.keywordFilter)
+        this.props.onDropdownSelect({ keywordFilter })
     }
 
     handleHornFilter = (e) => {
         const hornFilter = e.target.value;
-        this.props.onDropdownSelect({ keyword: hornFilter })
+        this.props.onDropdownSelect({ hornFilter })
     }
 
-
     render() {
-
         return (
             <header>
                 <h1>Great Horned Creature Gallery</h1>
