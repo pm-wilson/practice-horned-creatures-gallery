@@ -16,8 +16,42 @@ img {
   width: 500px;
   height: auto;
   box-shadow: 5px 5px;
+  border-radius: 10px;
 }
 
 section {
-  border: 2px solid red;
+  border: 2px solid dodgerblue;
+  margin: 20px 40px 20px 40px;
+  box-shadow: 5px 5px;
+  background-color: lightgray;
+  border-radius: 10px;
+  width: 800px;
+}
+
+header {
+  position: fixed;
+  background-color: dodgerblue;
+  width: 100%;
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 5px 5px;
+}
+
+h4 {
+  padding-top: 20px;
+}
+
+label {
+  padding: 20px;
+}
+
+main {
+  position: absolute;
+  top: 230px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -17,7 +17,7 @@ class CreaturesHeader extends React.Component {
             <header>
                 <h1>Great Horned Creature Gallery</h1>
                 <form>
-                    <h2>Filters</h2>
+                    <h4>Filters</h4>
                     <label><span>Keyword:</span>
                         <select name='keyword' onChange={this.handleKeywordFilter}>
                             {this.props.keywords.map((keyword, i) => {
